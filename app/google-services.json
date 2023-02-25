@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "329797187037",
+    "firebase_url": "https://classtrack-d4a9a-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "classtrack-d4a9a",
+    "storage_bucket": "classtrack-d4a9a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:329797187037:android:2422b67fa9881079b0b234",
+        "android_client_info": {
+          "package_name": "co.aione.classtrack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "329797187037-c3evrur8a4c9u4dlac4ojlu5hektdu7r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.aione.classtrack",
+            "certificate_hash": "44f3aa20cbe4f68a336a085d7ed98b7ac3e96956"
+          }
+        },
+        {
+          "client_id": "329797187037-jh3vj4c8j35f3arf7l7m28f6fq7bvicn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.aione.classtrack",
+            "certificate_hash": "4c0ec2649fe540bf453e11546405929ef6d92440"
+          }
+        },
+        {
+          "client_id": "329797187037-c104eqcf8c10ocp3u4oc8vs7rie3o4ns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBahkV_Aj13wc-87lX8z8m_vo9gNDhOIq4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "329797187037-c104eqcf8c10ocp3u4oc8vs7rie3o4ns.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import co.aione.classtrack.databinding.ActivityMainBinding
+import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,5 +19,6 @@ class MainActivity : AppCompatActivity() {
 //         setup navigation
         val navController = findNavController(R.id.nav_host_fragment_container)
         binding.bottomNavigation.setupWithNavController(navController)
+        FirebaseAuth.getInstance().signOut()
     }
 }
