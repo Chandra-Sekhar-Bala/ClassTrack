@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/streamFragment"
+    >
+
+    <fragment
+        android:id="@+id/attendanceFragment"
+        android:name="co.aione.classtrack.ui.attendance.AttendanceFragment"
+        android:label="fragment_attandence"
+        tools:layout="@layout/fragment_attandence" />
+    <fragment
+        android:id="@+id/semesterFragment"
+        android:name="co.aione.classtrack.ui.semster.SemesterFragment"
+        android:label="fragment_semester"
+        tools:layout="@layout/fragment_semester" >
+        <action
+            android:id="@+id/action_semesterFragment_to_studentFragment"
+            app:destination="@id/studentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentFragment"
+        android:name="co.aione.classtrack.ui.student.StudentFragment"
+        android:label="fragment_student"
+        tools:layout="@layout/fragment_student" >
+        <action
+            android:id="@+id/action_studentFragment_to_attendanceFragment"
+            app:destination="@id/attendanceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/streamFragment"
+        android:name="co.aione.classtrack.ui.stream.StreamFragment"
+        android:label="fragment_stream"
+        tools:layout="@layout/fragment_stream" >
+        <action
+            android:id="@+id/action_streamFragment_to_semesterFragment"
+            app:destination="@id/semesterFragment" />
+    </fragment>
+</navigation>

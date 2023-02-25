@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item
+        android:id="@+id/streamFragment"
+        android:icon="@drawable/database_icon"
+        android:title="Database" />
+    <item
+        android:id="@+id/attendanceFragment"
+        android:icon="@drawable/attendance_icon"
+        android:title="Attendance" />
+</menu>
