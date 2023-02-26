@@ -20,7 +20,7 @@ class StudentAdapter (val listener: OnItemClickListener, val showPresent: Boolea
         val name = item.findViewById(R.id.std_name) as TextView
         val present = item.findViewById(R.id.total_present) as TextView
         val removeIcon = item.findViewById(R.id.delete_student) as ImageView
-        val status = item.findViewById(R.id.delete_student) as ImageView
+        val status = item.findViewById(R.id.student_status) as ImageView
     }
     lateinit var context : Context
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
