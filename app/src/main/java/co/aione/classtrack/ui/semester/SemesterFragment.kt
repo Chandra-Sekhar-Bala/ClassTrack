@@ -1,4 +1,4 @@
-package co.aione.classtrack.ui.semster
+package co.aione.classtrack.ui.semester
 
 import android.os.Bundle
 import android.view.LayoutInflater

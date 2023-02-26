@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <attr name="sign_in_txt_color" type="color"/>
+    <attr name="edit_text_bg_color" type="color"/>
+    <attr name="edit_text_border_color" type="color"/>
+    <attr name="black_white_tint_color" format="color"/>
+    <attr name="item_bg_color" format="color"/>
+
 
 </resources>

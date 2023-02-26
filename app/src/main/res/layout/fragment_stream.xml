@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.stream.StreamFragment">
+    tools:context=".ui.stream.StreamFragment"
+    android:padding="10dp"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <EditText
+        android:id="@+id/edt_stream"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Stream fragment"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_bg"
+        android:hint="Enter Stream here"
+        android:inputType="text"
+        android:padding="16dp"
+        android:layout_marginHorizontal="10dp"
+        android:textSize="16sp"
+        android:focusable="false"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/submit_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:paddingHorizontal="60dp"
+        android:layout_marginTop="10dp"
+        android:textAllCaps="false"
+        android:textColor="?attr/black_white_tint_color"
+        app:backgroundTint="@null"
+        android:background="@drawable/btn_bg"
+        app:layout_constraintEnd_toEndOf="@+id/edt_stream"
+        app:layout_constraintStart_toStartOf="@+id/edt_stream"
+        app:layout_constraintTop_toBottomOf="@+id/edt_stream" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_stream"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/submit_btn"
+        android:layout_marginTop="10dp"
+        tools:listitem="@layout/item_details"
         />
-</FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

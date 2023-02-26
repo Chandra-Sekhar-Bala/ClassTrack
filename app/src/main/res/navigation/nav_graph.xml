@@ -13,7 +13,7 @@
         tools:layout="@layout/fragment_attandence" />
     <fragment
         android:id="@+id/semesterFragment"
-        android:name="co.aione.classtrack.ui.semster.SemesterFragment"
+        android:name="co.aione.classtrack.ui.semester.SemesterFragment"
         android:label="fragment_semester"
         tools:layout="@layout/fragment_semester" >
         <action
