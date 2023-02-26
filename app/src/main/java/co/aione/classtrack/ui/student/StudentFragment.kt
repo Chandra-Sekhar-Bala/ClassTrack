@@ -38,7 +38,7 @@ class StudentFragment : Fragment(), OnItemClickListener {
         stream = data.stream
         vIewModel = ViewModelProvider(this)[StudentViewModel::class.java]
         vIewModel.getStudents(stream, semester)
-        adapter = StudentAdapter(this)
+        adapter = StudentAdapter(this, false)
         binding.recyclerStudent.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerStudent.adapter = adapter
     }
@@ -66,6 +66,10 @@ class StudentFragment : Fragment(), OnItemClickListener {
     }
 
     override fun onDeleteButtonCLicked(roll: Int) {
+
+    }
+
+    override fun PresentORAbsent(isPresent: Boolean, roll: Int, t  : Int) {
 
     }
 
