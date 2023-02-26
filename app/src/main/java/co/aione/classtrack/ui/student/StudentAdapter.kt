@@ -38,6 +38,8 @@ class StudentAdapter (val listener: OnItemClickListener, val showPresent: Boolea
 
         }else{
             holder.status.visibility = View.VISIBLE
+            holder.present.visibility =View.GONE
+            holder.removeIcon.visibility =View.GONE
         }
         val data = getItem(position)
         holder.name.text = data.name

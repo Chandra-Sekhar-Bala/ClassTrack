@@ -38,7 +38,7 @@ class StudentFragment : Fragment(), OnItemClickListener {
         stream = data.stream
         vIewModel = ViewModelProvider(this)[StudentViewModel::class.java]
         vIewModel.getStudents(stream, semester)
-        adapter = StudentAdapter(this, false)
+        adapter = StudentAdapter(this, true)
         binding.recyclerStudent.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerStudent.adapter = adapter
     }
