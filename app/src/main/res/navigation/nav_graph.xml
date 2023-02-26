@@ -10,7 +10,16 @@
         android:id="@+id/attendanceFragment"
         android:name="co.aione.classtrack.ui.attendance.AttendanceFragment"
         android:label="fragment_attandence"
-        tools:layout="@layout/fragment_attandence" />
+        tools:layout="@layout/fragment_attandence" >
+        <argument
+            android:name="stream"
+            android:defaultValue="null"
+            app:argType="string" />
+        <argument
+            android:name="semester"
+            app:argType="string"
+            android:defaultValue="null" />
+    </fragment>
     <fragment
         android:id="@+id/semesterFragment"
         android:name="co.aione.classtrack.ui.semester.SemesterFragment"

@@ -87,9 +87,9 @@ class SemesterFragment : Fragment(), OnItemClickListener {
             .show()
     }
 
-    override fun OnItemCicked(sem: String) {
-//        val action  = SemesterFragmentArgs
-//        findNavController().navigate(action)
+    override fun OnItemCicked(semester: String) {
+        val action  = SemesterFragmentDirections.actionSemesterFragmentToStudentFragment(stream, semester)
+        findNavController().navigate(action)
     }
 
 

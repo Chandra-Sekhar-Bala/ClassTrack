@@ -9,7 +9,6 @@ import co.aione.classtrack.R
 
 class AttendanceFragment : Fragment() {
 
-
     private lateinit var viewModel: AttendanceViewModel
 
     override fun onCreateView(

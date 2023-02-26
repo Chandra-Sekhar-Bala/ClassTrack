@@ -13,7 +13,7 @@
 
 
     <TextView
-        android:id="@+id/roll_bo"
+        android:id="@+id/roll_no"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -33,9 +33,9 @@
         android:fontFamily="@font/mulish"
         android:text="Chandra Sekhar Bala"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/roll_bo"
-        app:layout_constraintStart_toEndOf="@+id/roll_bo"
-        app:layout_constraintTop_toTopOf="@+id/roll_bo" />
+        app:layout_constraintBottom_toBottomOf="@+id/roll_no"
+        app:layout_constraintStart_toEndOf="@+id/roll_no"
+        app:layout_constraintTop_toTopOf="@+id/roll_no" />
 
     <TextView
         android:id="@+id/total_present"
@@ -44,13 +44,13 @@
         android:fontFamily="@font/mulish"
         android:text="10"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/std_name"
-        app:layout_constraintEnd_toStartOf="@+id/deleteSem"
-        app:layout_constraintStart_toEndOf="@+id/std_name"
-        app:layout_constraintTop_toTopOf="@+id/std_name" />
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/delete_student"
+        app:layout_constraintEnd_toStartOf="@+id/delete_student"
+        app:layout_constraintTop_toTopOf="@+id/delete_student" />
 
     <ImageView
-        android:id="@+id/deleteSem"
+        android:id="@+id/delete_student"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginHorizontal="10dp"
