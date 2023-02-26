@@ -1,10 +1,14 @@
 package co.aione.classtrack.ui
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import co.aione.classtrack.Constants
 import co.aione.classtrack.MainActivity
 import co.aione.classtrack.databinding.ActivitySignupBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -24,6 +28,8 @@ class SignupActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var mGoogleSignInClient: GoogleSignInClient
     private lateinit var firebaseDatabase : FirebaseDatabase
+    private lateinit var sf : SharedPreferences
+
 
     val Req_Code: Int = 123
     private lateinit var firebaseAuth: FirebaseAuth
@@ -41,6 +47,7 @@ class SignupActivity : AppCompatActivity() {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
         firebaseAuth = FirebaseAuth.getInstance()
         firebaseDatabase = FirebaseDatabase.getInstance()
+        sf = this.getPreferences(Context.MODE_PRIVATE)
 
         binding.signInButton.setOnClickListener {
             showProgress(true)
@@ -82,6 +89,14 @@ class SignupActivity : AppCompatActivity() {
         val credential = GoogleAuthProvider.getCredential(account.idToken, null)
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener { task ->
             if (task.isSuccessful) {
+
+                with (sf.edit()) {
+                    putString(Constants.UID, account.id)
+                    apply()
+                    commit()
+                }
+                Log.i("TAGTAG", "UpdateUI: ${account.id} ")
+
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 showProgress(false)

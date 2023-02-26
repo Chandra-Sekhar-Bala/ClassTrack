@@ -45,12 +45,12 @@
         android:text="10"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/std_name"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/deleteSem"
         app:layout_constraintStart_toEndOf="@+id/std_name"
         app:layout_constraintTop_toTopOf="@+id/std_name" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/deleteSem"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginHorizontal="10dp"
