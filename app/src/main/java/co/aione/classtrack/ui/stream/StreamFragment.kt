@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import co.aione.classtrack.databinding.FragmentStreamBinding
 import co.aione.classtrack.Constants
@@ -43,7 +44,7 @@ class StreamFragment : Fragment(), OnItemClickListener {
         auth = FirebaseAuth.getInstance()
 
         viewModel = ViewModelProvider(this)[StreamViewModel::class.java]
-        viewModel.getAllSemester(Constants.unique_id)
+        viewModel.getAllStream(Constants.unique_id)
         adapter = StreamAdapter(this)
         binding.recyclerStream.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerStream.adapter = adapter
@@ -70,23 +71,33 @@ class StreamFragment : Fragment(), OnItemClickListener {
                 },
                 Toast.LENGTH_SHORT
             ).show()
+
+            binding.progressbar.visibility = when(it){
+                Progress.LOADING -> View.VISIBLE
+                Progress.SUCCESSFUL -> View.GONE
+                else -> View.GONE
+            }
         }
 
-        viewModel.semesters.observe(this) {
+        viewModel.streams.observe(this) {
             adapter.submitList(it)
-            Log.i("TAGTAG", "ADAPTEE back: $it")
         }
 
     }
 
     override fun onDeleteButtonCLicked(sem: String) {
         AlertDialog.Builder(requireContext())
-            .setTitle("Delete this Semester")
-            .setMessage("Do you really want to delete this semester")
+            .setTitle("Delete this Stream")
+            .setMessage("Do you really want to delete this Stream")
             .setPositiveButton("Yes"){_, _ ->
                 viewModel.removeSemester(sem)
             }.setNegativeButton("No"){_,_->}
             .show()
+    }
+
+    override fun OnItemCicked(sem: String) {
+        val action  = StreamFragmentDirections.actionStreamFragmentToSemesterFragment(sem)
+        findNavController().navigate(action)
     }
 
 

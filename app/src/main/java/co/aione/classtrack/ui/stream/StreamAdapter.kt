@@ -27,6 +27,9 @@ class StreamAdapter(private val listener: OnItemClickListener): ListAdapter<Stri
         holder.removeIcon.setOnClickListener{
             listener.onDeleteButtonCLicked(data)
         }
+        holder.itemView.setOnClickListener{
+            listener.OnItemCicked(data)
+        }
     }
     object Diffutils : DiffUtil.ItemCallback<String>(){
         override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
@@ -40,4 +43,5 @@ class StreamAdapter(private val listener: OnItemClickListener): ListAdapter<Stri
 }
 interface  OnItemClickListener{
     fun onDeleteButtonCLicked(sem: String)
+    fun OnItemCicked(sem: String)
 }

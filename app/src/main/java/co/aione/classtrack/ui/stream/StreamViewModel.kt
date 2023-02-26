@@ -1,6 +1,5 @@
 package co.aione.classtrack.ui.stream
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -18,14 +17,14 @@ class StreamViewModel : ViewModel() {
     private val dbRef = Firebase.database
     private val ref = dbRef.getReference(Constants.USERS)
 
-    private var _semesters = MutableLiveData<List<String>>()
-    val semesters: LiveData<List<String>>
-        get() = _semesters
+    private var _streams = MutableLiveData<List<String>>()
+    val streams: LiveData<List<String>>
+        get() = _streams
 
     private var _progress = MutableLiveData<Progress>()
     val progress: LiveData<Progress>
         get() = _progress
-    fun getAllSemester(uid: String) {
+    fun getAllStream(uid: String) {
         viewModelScope.launch {
             ref.child(uid).addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -34,13 +33,9 @@ class StreamViewModel : ViewModel() {
                         for (userSnapshot in snapshot.children) {
                             list.add(userSnapshot.key.toString())
                         }
-                        Log.i("TAGTAG", "onDataChange: ${_semesters.value}")
-                        _semesters.value = list
-
-                        Log.i("TAGTAG", "onDataChange+: ${_semesters.value}")
-                    }else{
-                        Log.i("TAGTAG", "Does not eist")
+                        _streams.value = list
                     }
+                    _progress.value = Progress.FAILED
                 }
                 override fun onCancelled(error: DatabaseError) {
                 }

@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_semesterFragment_to_studentFragment"
             app:destination="@id/studentFragment" />
+        <argument
+            android:name="sem"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/studentFragment"
@@ -28,6 +31,12 @@
         <action
             android:id="@+id/action_studentFragment_to_attendanceFragment"
             app:destination="@id/attendanceFragment" />
+        <argument
+            android:name="stream"
+            app:argType="string" />
+        <argument
+            android:name="semester"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/streamFragment"
